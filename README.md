@@ -1,12 +1,9 @@
-# Getting Started with Create React App and Redux
+use nvm to install and use v16.10.0
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+`yarn install` (npm i yarn -g if you don't have yarn installed globally)
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
+`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,33 +11,40 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### The test overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You are allowed to look up any documentation you can to help you solve. But do not ask or get help from any other devs.
+You are welcome and encouraged to ask questions via phone 615-543-6369, email kelsey.wynns@emboldhealth.com, or even a screen share.
 
-### `npm run build`
+`npm start` should start the app with no errors, but make sure to fix any warnings
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This react app state is setup with Redux Toolkit https://redux-toolkit.js.org/usage/usage-guide
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+And specifically leverages RTK Query https://redux-toolkit.js.org/rtk-query/overview to fetch, create, and manage the reducer state
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+UI elements are chakra ui https://chakra-ui.com/docs/components/overview
 
-### `npm run eject`
+The api is `https://reqres.in/` which simulates a real api (notice the delay=1 to slow down the response)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Step 1:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In `users/services.js` there is a deleteUser endpoint that needs to be modified to be a mutation `build.mutation()`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Then in `UserList.jsx` use this new useMutation to delete a user when hitting the delete button
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Step 2:
 
-## Learn More
+In `UserList.jsx` there is an invalid user injected, and should throw a 404 when deleted.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use the chakra ui toast element to show the error, https://chakra-ui.com/docs/components/feedback/toast
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Step 3: 
+
+Clean up the ui/styling a little bit and make sure it's responsive.
+
+Bonus: (if this is taking too long don't worry about the bonus)
+
+Add a view more button on each person that opens a drawer https://chakra-ui.com/docs/components/overlay/drawer and displays all of the fields.
+
+Bonus2: Have the page number show in the url, and when you reload it displays that page. Same thing with the drawer/user. Put the user id in the url,
+so when the page is reloaded, the drawer will show with the user. 
