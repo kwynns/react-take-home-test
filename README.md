@@ -16,6 +16,8 @@ You may also see any lint errors in the console.
 You are allowed to look up any documentation you can to help you solve. But do not ask or get help from any other devs.
 You are welcome and encouraged to ask questions via phone 615-543-6369, email kelsey.wynns@emboldhealth.com, or even a screen share.
 
+Fork the repo, and add me as a collaborator `kelseywynns@gmail.com`. Feel free to create a merge request for each step for me to review/give feedback, or you can make one large one.
+
 `npm start` should start the app with no errors, but make sure to fix any warnings
 
 This react app state is setup with Redux Toolkit https://redux-toolkit.js.org/usage/usage-guide
@@ -42,9 +44,8 @@ Step 3:
 
 Clean up the ui/styling a little bit and make sure it's responsive.
 
-Bonus: (if this is taking too long don't worry about the bonus)
+Bonus: (only if you have the time, and this isn't taking too long)
 
 Add a view more button on each person that opens a drawer https://chakra-ui.com/docs/components/overlay/drawer and displays all of the fields.
 
-Bonus2: Have the page number show in the url, and when you reload it displays that page. Same thing with the drawer/user. Put the user id in the url,
-so when the page is reloaded, the drawer will show with the user. 
+Bonus2: Have the page number show in the url, and when you reload it fetches and displays that page on load. Same thing with the drawer/user with the user id in the url (use routes)
