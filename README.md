@@ -15,7 +15,7 @@ You may also see any lint errors in the console.
 ## The test overview
 
 You are allowed to look up any documentation you can to help you solve. But do not ask or get help from any other devs.
-You are welcome and encouraged to ask questions via phone 615-543-6369, email kelsey.wynns@emboldhealth.com, or even a screen share.
+ Run this in the console of your browser: `atob('WW91IGFyZSB3ZWxjb21lIGFuZCBlbmNvdXJhZ2VkIHRvIGFzayBxdWVzdGlvbnMgdmlhIHBob25lIDYxNS01NDMtNjM2OSwgZW1haWwga2Vsc2V5Lnd5bm5zQGVtYm9sZGhlYWx0aC5jb20sIG9yIGV2ZW4gYSBzY3JlZW4gc2hhcmUu')`
 
 <img width="559" alt="image" src="https://user-images.githubusercontent.com/427355/165921759-20b2d538-6650-4638-a953-055fc1500719.png">
 
