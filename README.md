@@ -52,4 +52,6 @@ Clean up the ui/styling a little bit and make sure it's responsive.
 
 Add a view more button on each person that opens a drawer https://chakra-ui.com/docs/components/overlay/drawer and displays all of the fields.
 
-#### Bonus2: Have the page number show in the url, and when you reload it fetches and displays that page on load. Same thing with the drawer/user with the user id in the url (use routes)
+#### Bonus2:
+
+Have the page number show in the url, and when you reload it fetches and displays that page on load. Same thing with the drawer/user with the user id in the url (use routes)
