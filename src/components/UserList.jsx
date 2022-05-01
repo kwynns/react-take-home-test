@@ -30,15 +30,15 @@ export default function UserList() {
 
       ))}
       </SimpleGrid> : null}
-      <button onClick={() => setPage(page - 1)} isLoading={isFetching}>
+      <Button onClick={() => setPage(page - 1)} isLoading={isFetching}>
         Previous
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => setPage(page + 1)}
         isLoading={isFetching}
       >
         Next
-      </button>
+      </Button>
     </div>
   )
 }
