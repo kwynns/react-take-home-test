@@ -21,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "filldata": "node ./api/fill-data.js > ./api/database.json"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.2.0",
+    "msw": "^0.39.2"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

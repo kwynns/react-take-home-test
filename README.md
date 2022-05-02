@@ -32,7 +32,7 @@ And specifically leverages RTK Query https://redux-toolkit.js.org/rtk-query/over
 
 UI elements are chakra ui https://chakra-ui.com/docs/components/overview
 
-The api is `https://reqres.in/` which simulates a real api (notice the delay=1 to slow down the response)
+In place of an api, I'm using msw. You can see the initial data in `./src/mocks/users-data.js`
 
 ### Step 1:
 
@@ -56,4 +56,5 @@ Add a view more button on each person that opens a drawer https://chakra-ui.com/
 
 #### Bonus2:
 
-Have the page number show in the url, and when you reload it fetches and displays that page on load. Same thing with the drawer/user with the user id in the url (use routes)
+When the drawer is open with the additional user data, add the id to the url path, so if you refresh the page, the drawer 
+will automatically open with that user

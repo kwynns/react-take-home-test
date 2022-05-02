@@ -2,10 +2,15 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { ChakraProvider, extendTheme  } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/browser')
+  worker.start()
+}
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -33,9 +38,9 @@ const customTheme = extendTheme({
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={customTheme}>
-    <Provider store={store}>
-      <App />
-    </Provider>
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ChakraProvider>
 
   </React.StrictMode>
