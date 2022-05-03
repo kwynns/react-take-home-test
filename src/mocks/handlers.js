@@ -4,9 +4,11 @@ import { v4 as uuidv4 } from 'uuid'
 
 const url = `/api/users`
 
+const notFound = { error: "User not found", status: 404 }
+
 export const handlers = [
   rest.get(url, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(UsersData))
+    return res(ctx.status(200), ctx.json(UsersData), ctx.delay(300))
   }),
 
   rest.get(`${url}/:userId`, (req, res, ctx) => {
@@ -16,12 +18,12 @@ export const handlers = [
         (user) => user.id === userId.toString()
       )
       if (userIndex !== -1) {
-        return res(ctx.json(UsersData[userIndex]), ctx.status(200))
+        return res(ctx.json(UsersData[userIndex]), ctx.status(200), ctx.delay(300))
       } else {
-        return res(ctx.status(404))
+        return res(ctx.json(notFound), ctx.status(404))
       }
     }
-    return res(ctx.status(400))
+    return res({ error: "Error listing users", status: 400 }, ctx.status(400), ctx.delay(400))
   }),
 
   rest.post(`${url}`, (req, res, ctx) => {
@@ -33,7 +35,7 @@ export const handlers = [
       UsersData.push(user)
       return res(ctx.status(201), ctx.json(user))
     }
-    return res(ctx.status(400))
+    return res({ error: "Error creating user", status: 400 }, ctx.status(400))
   }),
 
   rest.delete(`${url}/:userId`, (req, res, ctx) => {
@@ -46,10 +48,10 @@ export const handlers = [
         UsersData.splice(userIndex, 1)
         return res(ctx.status(200))
       } else {
-        return res(ctx.status(404))
+        return res(ctx.json(notFound), ctx.status(404), ctx.delay(300))
       }
     }
-    return res(ctx.status(400))
+    return res(ctx.json({ error: "Error deleting user", status: 400 }), ctx.status(400), ctx.delay(200))
   }),
 
   rest.put(`${url}/:userId`, (req, res, ctx) => {
@@ -62,10 +64,10 @@ export const handlers = [
         UsersData[userIndex] = { ...req.body }
         return res(ctx.status(200))
       } else {
-        return res(ctx.status(404))
+        return res(ctx.json(notFound), ctx.status(404))
       }
     }
-    return res(ctx.status(400))
+    return res({ error: "Error updating user", status: 400 }, ctx.status(400))
   }),
 ]
 
