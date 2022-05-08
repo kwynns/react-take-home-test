@@ -41,7 +41,9 @@ Then in `.src/components/UserList.jsx` use this new useMutation to delete a user
 
 In `.src/components/UserList.jsx` there is an invalid user injected, and should throw a 404 when deleted.
 
-Use the chakra ui toast element to show the error, https://chakra-ui.com/docs/components/feedback/toast
+Use react toastify to show the error, https://www.npmjs.com/package/react-toastify
+
+Do not use the chakra-ui toast
 
 ### Step 3:
 
